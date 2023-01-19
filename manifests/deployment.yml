@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: app1nginaks 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app1nginaks
+  template:
+    metadata:
+      labels:
+        app: app1nginaks 
+    spec:
+      containers:
+        - name: app1nginaks 
+          image: aksdevopsacralex.azurecr.io/app1nginaks
+          ports:
+          - containerPort: 80
